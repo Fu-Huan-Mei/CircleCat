@@ -1,7 +1,15 @@
-def print_something(num):
-	print(num)
+num_dogs = 5
+num_food = 5
+if num_dogs == 10: 
+    num_food = num_food - 1
+print(num_food)
 
-print_something(21)
+# if num_dogs == 10: 
+#     num_food = num_food - 1
+# def print_something(num):
+# 	print(num)
+
+# print_something(21)
 # def get_first_num():
 #  return 3
 
