@@ -1,5 +1,0 @@
-age = int(input())
-weight = int(input())
-heart_rate = int(input())
-time = int(input())
-r = (age)
