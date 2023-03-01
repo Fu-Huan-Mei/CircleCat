@@ -267,3 +267,93 @@
 </body>
 
 </html>
+
+
+
+  /*！！重点看呀！这里设置时又卡壳了！！设置menu3中“我的京东”*/
+         /*我自己先设置menu3即单独给它设置width、height、padding等，但出现了i下移的情况*/
+        .menu3{
+            float: left;
+            position: relative;
+        }
+        .menu3 .title2{
+            position: relative;
+            padding:0 7px;
+/*重点呀！！注意：该设置款元解决问题1的问题！！！！*/
+            border:1px solid transparent;
+            border-bottom: none;
+/*重点！！！！层级设置在下拉框上的兄弟元素才会起到背景颜色遮盖下拉框上边框一部分的效果*/
+            z-index: 9999;
+        }
+/*！！！重点：鼠标移入是移入到menu3，但是效果是给下拉框上的兄弟元素即小标题给是个值得，不是给整一个menu3!!!*/
+        .menu3:hover .title2{
+            background-color: #fff;
+            /*问题1：如果在鼠标移入时才设置边框，则会撑大元素，导致该区域放大*/
+            /* border:1px solid black; */
+            border-color: #ccc;
+        }
+        .menu3 .title2 i{
+            font-size: 12px;
+        }
+        .menu3 .hide-div2{
+            position: absolute;
+            top:30px;
+            left:0px;
+            width:281px;
+            height:230px;
+            border:1px solid #ccc; 
+            background-color: #fff;
+            display: none;
+        }
+        /*下拉框出现*/
+        .menu3:hover .hide-div2{
+            display: block;
+        }
+        /*下拉框2的第一部分内容*/
+        .top2{
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:265px;
+            height:48px;
+            padding:10px 0px 10px 15px;
+        }
+        .top2 a,
+        .middle2 a,
+        .bottom2 a{
+            float:left;
+            width:88px;
+            height:24px;
+        }
+        /*设置下拉框的横线*/
+        .space-line1,
+        .space-line2{
+            position:absolute;
+            left:0px;
+            top:68px;
+            width:280px;
+            height:0px;
+            border-bottom:1px solid #eee;
+        }
+        /*设置下拉框中间位置的内容*/
+        .menu3 .middle2{
+            position: absolute;
+            top:68px;
+            left:0px;
+            width:265px;
+            height:48px;
+            padding:10px 0px 10px 15px;
+        }
+        /*单独设置第二条下拉框的横向位置*/
+        .space-line2{
+            top:136px;
+        }
+        /*设置下拉框下边位置的内容*/
+        .menu3 .bottom2{
+            position: absolute;
+            top:137px;
+            left:0px;
+            width:265px;
+            height:72px;
+            padding:10px 0px 10px 15px;
+        }
